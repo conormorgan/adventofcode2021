@@ -1,16 +1,13 @@
 with open('test.txt') as file:
     depths = file.read().splitlines()
 
+d = [int(x) for x in depths]
 increases = 0
 
-for i in range(1,len(depths)):
-        if depths[i] > depths[i-1] :
+for i in range(1,len(d)):
+        if d[i] > d[i-1] :
             increases += 1
-
-count = sum(y>x for x,y in zip(depths, depths[1:]))
-print(count)
-
+            
 print(increases)
-# comment
-list_comp = len([depths[i] for i in range(1,len(depths)) if depths[i] > depths[i-1]])
+list_comp = len([d[i] for i in range(1,len(d)) if d[i] > d[i-1]])
 print(list_comp)
